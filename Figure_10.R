@@ -16,10 +16,11 @@
 #       a method-sensitivity analysis is written to
 #       Figure_10_method_sensitivity.csv (section 8).
 #     - Jeju Sea and Seogwipo Sea are pooled into a single "Jeju + Seogwipo
-#       Sea" region (see Methods 2.5 and Discussion 4.3 for rationale:
-#       these are the northern/southern halves of the same island shelf
-#       system, and pooling improves statistical power for the network
-#       analysis given the small per-region sample sizes, n = 10 and n = 8).
+#       Sea" region (see Methods 2.5 for rationale: these are the northern
+#       and southern coasts of the same volcanic island, and their individual
+#       sample sizes, n = 10 and n = 8 profiles from 5 and 4 stations, are too
+#       small for a correlation network; pooling only partly mitigates this,
+#       because the pooled n = 18 profiles come from 9 stations).
 #
 #   Figure_10a.png  - Spearman correlation heatmap (dominant phyto x dominant zoo,
 #                     nationwide; * = edge meeting |rho| > 0.6 & FDR p < 0.01)
@@ -71,11 +72,13 @@ phyto_rows <- which(tax_vec == "Phytoplankton")
 zoo_rows   <- which(tax_vec == "Zooplankton")
 
 # ── Pool Jeju Sea and Seogwipo Sea into a single region ─────────────────────
-# Rationale (Methods 2.5 / Discussion 4.3): Jeju and Seogwipo are the
-# northern and southern coastal shelves of the same volcanic island system,
-# not independent basins. Pooling substantially improves the statistical
-# power of the per-region correlation network (n = 10 and n = 8 individually
-# vs. n = 18 pooled) without merging genuinely distinct oceanographic regimes.
+# Rationale (Methods 2.5): Jeju and Seogwipo lie on the northern and southern
+# coasts of the same volcanic island, and their individual sample sizes
+# (n = 10 and n = 8 profiles from 5 and 4 stations) are too small for a
+# correlation network. Pooling (n = 18 profiles from 9 stations) only partly
+# mitigates this, because UUV and net profiles from the same station are not
+# independent (see Discussion 4.3). This pooling is used for the network
+# analysis only; all other analyses keep the two sectors separate.
 locations_grouped <- ifelse(locations %in% c("Jeju Sea", "Seogwipo Sea"),
                             "Jeju + Seogwipo Sea", locations)
 

@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33140565/README.md)
 # UUV-eDNA-plankton-Korean-coast
 
 R scripts for the statistical analyses and figures of a comparative study of plankton diversity detection based on environmental DNA (eDNA) collected by an uncrewed underwater vehicle (UUV) and by conventional net sampling across Korean coastal waters.
@@ -42,8 +41,8 @@ The scripts use one processed dataset, `MetaK90_location.csv`, deposited in Drya
 
 | File | Output |
 |---|---|
-| `Statistics_paired.R` | The main statistics reported in the manuscript, written to `./stats_output/`. These cover station-level pairing of UUV and net profiles (62 pairs); per-profile metrics (reads, generic richness, Shannon diversity, phytoplankton read proportion); descriptive statistics; paired Wilcoxon signed-rank tests; library-size correlations (library size = genus-assigned plankton reads per profile); rarefaction to the minimum library size; regional summaries; method-exclusive genera; pooled read fractions; and PERMANOVA, PERMDISP, and NMDS. |
-| `Statistics_revision.R` | Additional analyses added during revision, written to `./stats_output/`: a macroalgae sensitivity analysis, in which the phytoplankton comparisons are repeated after excluding 97 benthic macroalgal genera (phytoplankton richness, macroalgal richness, and the microalgal read proportion, i.e., microalgal reads as a percentage of plankton reads excluding macroalgal reads); method-exclusive phytoplankton genera split into microalgae and macroalgae; and region-specific paired Wilcoxon signed-rank tests of total, phytoplankton, and zooplankton richness, Shannon diversity, and phytoplankton read proportion (Supplementary Table S2). |
+| `Statistics_paired.R` | All statistics reported in the manuscript, written to `./stats_output/`. These cover station-level pairing of UUV and net profiles (62 pairs); per-profile metrics (reads, generic richness, Shannon diversity, phytoplankton read proportion); descriptive statistics; paired Wilcoxon signed-rank tests; library-size correlations; rarefaction to the minimum library size; regional summaries; method-exclusive genera; pooled read fractions; and PERMANOVA, PERMDISP, and NMDS. |
+| `Statistics_revision.R` | Analyses added during revision, written to `./stats_output/`: the macroalgae sensitivity analysis (phytoplankton comparisons repeated after excluding 97 benthic macroalgal genera; method-exclusive phytoplankton genera split into microalgae and macroalgae) and the region-specific paired Wilcoxon signed-rank tests reported in Supplementary Table S2. |
 | `Figure_01.R` | Map of sampling stations across the five regions. Each station is classified by pairing status (paired, or net sample excluded following QC failure). |
 | `Figure_02.R` | Venn diagram and bar plot of genera detected by both methods or by only one method, and mean per-sample read counts of the 20 most abundant genera in UUV and net profiles. |
 | `Figure_03.R` | Heatmap of log10(mean reads per profile + 1) for the 30 most abundant genera, grouped by guild. |
@@ -82,4 +81,4 @@ install.packages(c("readxl", "dplyr", "tidyr", "reshape2", "ggplot2", "cowplot",
 
 ## Data source
 
-The data are primary field data collected by the authors in April 2024 and analyzed by the authors; they were not derived from external or published sources. All field samples were collected under the regulatory guidelines of the relevant Korean coastal management authorities. No specific commercial licensing or proprietary permits were required for the water and plankton sampling.
+The data are primary field data collected and analyzed by the authors in April 2024; they were not derived from external or published sources. All field samples were collected under the regulatory guidelines of the relevant Korean coastal management authorities. No specific commercial licensing or proprietary permits were required for the water and plankton sampling.

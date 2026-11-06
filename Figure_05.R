@@ -297,7 +297,7 @@ excl_df <- data.frame(
                   levels = c("UUV", "Net"))
 )
 
-print(excl_df)   # should match Results 3.1 (34 / 21 / 48 / 57)
+print(excl_df)   # should match Results 3.1 (33 / 21 / 49 / 57)
 
 fig_f <- ggplot(excl_df, aes(x = Category, y = Count, fill = Method)) +
   geom_col(width = 0.65, colour = "white", linewidth = 0.2) +
